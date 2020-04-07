@@ -1,0 +1,1 @@
+This is passwordreset - an [Opal](https://github.com/openhealthcare/opal) plugin.

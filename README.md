@@ -2,7 +2,18 @@ This is passwordreset - an [Opal](https://github.com/openhealthcare/opal) plugin
 
 This plugin adds views and functionality to allow users to reset their passwords.
 
-It adds three views.
+
+### Setup
+
+* Add this repo to your requirements.txt.
+* Add `passwordreset` to your INSTALLED_APPS in settings.py
+* Change your login page to add a reset password link to `request-reset`
+
+
+
+## Architecture
+
+The plugin adds three views.
 
 #### request-reset
 That asks the user to enter their username and will send an email to the email address related to that user.
@@ -21,11 +32,4 @@ A redirect view that redirects the user to the built in opal change password vie
 
 
 It also uses the template `passwordreset/reset_email.html` as the template for the html email that is sends.
-
-
-### Setup
-Add this repo to your requirements.txt.
-Add `passwordreset` to your INSTALLED_APPS in settings.py
-Change your login page to add a reset password link to `request-reset`
-
 

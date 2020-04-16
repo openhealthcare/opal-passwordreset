@@ -27,5 +27,6 @@ It also uses the template `passwordreset/reset_email.html` as the template for t
 Add this repo to your requirements.txt.
 Add `passwordreset` to your INSTALLED_APPS in settings.py
 Change your login page to add a reset password link to `request-reset`
+ie ({% url 'request-reset' %})
 
 

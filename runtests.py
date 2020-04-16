@@ -30,6 +30,20 @@ settings.configure(DEBUG=True,
                        'reversion.middleware.RevisionMiddleware',
                        'axes.middleware.FailedLoginMiddleware',
                    ),
+                   TEMPLATES=[
+                        {
+                            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                            'DIRS': [
+                                os.path.join(".", 'templates'),
+                            ],
+                            'APP_DIRS': True,
+                            'OPTIONS': {
+                                'context_processors': [
+                                    'django.contrib.auth.context_processors.auth',
+                                ],
+                            },
+                        },
+                   ],
                    INSTALLED_APPS=('django.contrib.auth',
                                    'django.contrib.contenttypes',
                                    'django.contrib.sessions',

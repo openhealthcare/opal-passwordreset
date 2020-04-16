@@ -19,6 +19,13 @@ logger = logging.getLogger(__name__)
 
 
 class RequestReset(FormView):
+    """
+    Provides/processes a form for the user to enter their username.
+
+    If they have an email address related to the user, email them
+    a reeset link.
+    """
+
     template_name = "passwordreset/send_email_link.html"
     form_class = forms.SendEmailForm
 
@@ -57,10 +64,19 @@ class RequestReset(FormView):
 
 
 class CheckYourEmailPage(TemplateView):
+    """
+    A template view that tells the user to check their email
+    for the reset link
+    """
     template_name = "passwordreset/check.html"
 
 
 class HashLogin(RedirectView):
+    """
+    A redirect view that if the sign is correct,
+    changes the user to force_password_change=True
+    and redirects the user to the change password screen.
+    """
     def login_user_or_404(self, signed_pk):
         signer = TimestampSigner(salt=LOGIN_SALT)
         user_pk = signer.unsign(signed_pk, max_age=datetime.timedelta(hours=2))

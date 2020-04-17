@@ -1,32 +1,32 @@
 This is passwordreset - an [Opal](https://github.com/openhealthcare/opal) plugin.
 
-This plugin adds views and functionality to allow users to reset their passwords.
+This plugin deals with allowing the user to reset their password.
 
-It adds three views.
-
-#### request-reset
-That asks the user to enter their username and will send an email to the email address related to that user.
-
-It uses the template `passwordreset/send_email_link.html`
-
-#### check-email
-A confirmation page that the email has been sent.
-
-It uses the template `passwordreset/check.html`
+**This must appear above `django.contrib.admin` in order to use the corrrect templates**
 
 
-#### hash-login
-A redirect view that redirects the user to the built in opal change password view.
+It uses the default password reset views in `django.contrib.auth`.
+
+It changes them in 2 ways..
+
+1. It adds bootstrap styling to the widgets.
+2. When we the user has changed their password we automatically
+   log them in and redirct them to the change password page.
+
+### Templates
+`registration/password_reset_form.html` is the form the user enters their email and receives a reset link.
+
+`registration/password_reset_done.html` is the page that we redirect to after they've entered their email into the above form.
 
 
+`registration/password_reset_subject.txt` is the email subject line sent to the user.
 
-It also uses the template `passwordreset/reset_email.html` as the template for the html email that is sends.
+`registration/password_reset_email.html` is the html email body sent to the user.
 
+`registration/password_reset_confirm.html` is the page they get redirected to after they click on message in their email.
 
-### Setup
-Add this repo to your requirements.txt.
-Add `passwordreset` to your INSTALLED_APPS in settings.py
-Change your login page to add a reset password link to `request-reset`
-ie ({% url 'request-reset' %})
+### Views
+`PasswordResetView`, is an extended version of the `auth.views.PasswordResetView`. The form view asking the user to enter their email. This just changes the form in the view have bootstrap styling.
 
-
+`PasswordResetConfirmView` This is the view the user goes to after they have clicked in the link in their email. It
+changes `profile.force_password_change` to True, logs them in and redirects them to the password change view.

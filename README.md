@@ -2,7 +2,22 @@ This is passwordreset - an [Opal](https://github.com/openhealthcare/opal) plugin
 
 This plugin deals with allowing the user to reset their password.
 
+<<<<<<< HEAD
 **This must appear above `django.contrib.admin` in order to use the corrrect templates**
+=======
+
+### Setup
+
+* Add this repo to your requirements.txt.
+* Add `passwordreset` to your INSTALLED_APPS in settings.py
+* Change your login page to add a reset password link to `request-reset`
+
+
+
+## Architecture
+
+The plugin adds three views.
+>>>>>>> a7e77426da71bb5f656fd5e16edf582f7838637c
 
 
 It uses the default password reset views in `django.contrib.auth`.
@@ -23,10 +38,3 @@ It changes them in 2 ways..
 
 `registration/password_reset_email.html` is the html email body sent to the user.
 
-`registration/password_reset_confirm.html` is the page they get redirected to after they click on message in their email.
-
-### Views
-`PasswordResetView`, is an extended version of the `auth.views.PasswordResetView`. The form view asking the user to enter their email. This just changes the form in the view have bootstrap styling.
-
-`PasswordResetConfirmView` This is the view the user goes to after they have clicked in the link in their email. It
-changes `profile.force_password_change` to True, logs them in and redirects them to the password change view.

@@ -2,9 +2,6 @@ This is passwordreset - an [Opal](https://github.com/openhealthcare/opal) plugin
 
 This plugin deals with allowing the user to reset their password.
 
-<<<<<<< HEAD
-**This must appear above `django.contrib.admin` in order to use the corrrect templates**
-=======
 
 ### Setup
 
@@ -17,7 +14,6 @@ This plugin deals with allowing the user to reset their password.
 ## Architecture
 
 The plugin adds three views.
->>>>>>> a7e77426da71bb5f656fd5e16edf582f7838637c
 
 
 It uses the default password reset views in `django.contrib.auth`.

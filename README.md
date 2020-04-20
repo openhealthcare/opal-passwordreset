@@ -8,6 +8,7 @@ This plugin deals with allowing the user to reset their password.
 * Add this repo to your requirements.txt.
 * Add `passwordreset` to your INSTALLED_APPS in settings.py
 * Change your login page to add a reset password link to `request-reset`
+* make sure OPAL_BRAND_NAME and DEFAULT_FROM_EMAIL are set in your settings.py
 
 
 

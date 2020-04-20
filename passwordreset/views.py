@@ -18,6 +18,7 @@ class PasswordResetConfirmView(views.PasswordResetConfirmView):
     """
     post_reset_login = True
     success_url = reverse_lazy('change-password')
+    form_class = forms.OpalSetPasswordForm
 
     def get_user(self, *args, **kwargs):
         user = super().get_user(*args, **kwargs)

@@ -10,6 +10,7 @@ class PasswordResetView(views.PasswordResetView):
     form_class = forms.OpalPasswordResetForm
     html_email_template_name = "registration/password_reset_email.html"
     email_template_name = 'registration/password_reset_email.txt'
+    subject_template_name = 'registration/password_reset_email_subject.txt'
 
 
 class PasswordResetConfirmView(views.PasswordResetConfirmView):

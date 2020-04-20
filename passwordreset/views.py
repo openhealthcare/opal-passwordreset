@@ -17,4 +17,5 @@ class PasswordResetConfirmView(views.PasswordResetConfirmView):
     and redirects the user to the change password screen.
     """
     post_reset_login = True
+    success_url = '/'
     form_class = forms.OpalSetPasswordForm

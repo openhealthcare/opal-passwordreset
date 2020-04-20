@@ -30,6 +30,7 @@ It changes them in 2 ways..
 
 `registration/password_reset_done.html` is the page that we redirect to after they've entered their email into the above form.
 
+`registration/password_reset_base.html` is the base template from which the above inherit
 
 `registration/password_reset_subject.txt` is the email subject line sent to the user.
 

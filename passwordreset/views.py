@@ -13,7 +13,7 @@ class PasswordResetView(views.PasswordResetView):
     email_template_name = 'registration/password_reset_email.txt'
     subject_template_name = 'registration/password_reset_email_subject.txt'
     extra_email_context = {
-        OPAL_BRAND_NAME: settings.OPAL_BRAND_NAME
+        "OPAL_BRAND_NAME": settings.OPAL_BRAND_NAME
     }
 
 

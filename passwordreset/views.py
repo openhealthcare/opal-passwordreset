@@ -8,6 +8,8 @@ from . import forms
 
 class PasswordResetView(views.PasswordResetView):
     form_class = forms.OpalPasswordResetForm
+    html_email_template_name = "registration/password_reset_email.html"
+    email_template_name = 'registration/password_reset_email.txt'
 
 
 class PasswordResetConfirmView(views.PasswordResetConfirmView):

@@ -20,9 +20,8 @@ class PasswordResetConfirmView(views.PasswordResetConfirmView):
     success_url = reverse_lazy('change-password')
 
     def get_user(self, *args, **kwargs):
-        user = super().get_user()
+        user = super().get_user(*args, **kwargs)
         profile = user.profile
         profile.force_password_change = True
         profile.save()
         return user
-
